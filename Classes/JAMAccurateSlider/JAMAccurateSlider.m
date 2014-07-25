@@ -141,13 +141,13 @@ static const float kAnimationFadeOutDuration = 0.4;
     CGFloat y = 0;
     CGPoint point = [touch locationInView:self.superview];
     if(point.y <= (self.frame.origin.y + self.frame.size.height / 2.0)){
-        y = (self.frame.origin.y + self.frame.size.height / 2.0) - 29;
-    } else {
         y = (self.frame.origin.y + self.frame.size.height / 2.0) + 29;
+    } else {
+        y = (self.frame.origin.y + self.frame.size.height / 2.0) - 29;
     }
     self.valueView.center = CGPointMake(x, y);
     if(floorf(self.value) == self.value){
-        self.valueLabel.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.value];
+        self.valueLabel.text = [NSString stringWithFormat:@"%ld", (long)self.value];
     } else {
         self.valueLabel.text = [NSString stringWithFormat:@"%f", self.value];
     }
